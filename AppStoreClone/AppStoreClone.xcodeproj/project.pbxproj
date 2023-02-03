@@ -16,6 +16,8 @@
 		801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31A6298DAC0A00D9FDC6 /* AppsViewController.swift */; };
 		801A31A9298DAC1100D9FDC6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31A8298DAC1100D9FDC6 /* SearchViewController.swift */; };
 		801A31AB298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */; };
+		801A31AF298DBD4800D9FDC6 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31AD298DBD4800D9FDC6 /* UIView+Layout.swift */; };
+		801A31B0298DBD4800D9FDC6 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31AE298DBD4800D9FDC6 /* VerticalStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		801A31A6298DAC0A00D9FDC6 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		801A31A8298DAC1100D9FDC6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionCell.swift; sourceTree = "<group>"; };
+		801A31AD298DBD4800D9FDC6 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		801A31AE298DBD4800D9FDC6 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			children = (
 				801A319B298DAA2400D9FDC6 /* App */,
 				801A319A298DA9FD00D9FDC6 /* Components */,
+				801A31AC298DBD2C00D9FDC6 /* Extensions */,
 				801A319E298DAB1C00D9FDC6 /* Managers */,
 				801A319D298DAA2F00D9FDC6 /* Resources */,
 				801A319C298DAA2A00D9FDC6 /* Scenes */,
@@ -74,7 +79,8 @@
 		801A319A298DA9FD00D9FDC6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */,
+				801A31B2298DBD9900D9FDC6 /* Cells */,
+				801A31B1298DBD9000D9FDC6 /* CustomViews */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -138,6 +144,30 @@
 				801A31A8298DAC1100D9FDC6 /* SearchViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		801A31AC298DBD2C00D9FDC6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				801A31AD298DBD4800D9FDC6 /* UIView+Layout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		801A31B1298DBD9000D9FDC6 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				801A31AE298DBD4800D9FDC6 /* VerticalStackView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		801A31B2298DBD9900D9FDC6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801A31AF298DBD4800D9FDC6 /* UIView+Layout.swift in Sources */,
+				801A31B0298DBD4800D9FDC6 /* VerticalStackView.swift in Sources */,
 				801A3199298DA56C00D9FDC6 /* BaseTabBarController.swift in Sources */,
 				801A31A9298DAC1100D9FDC6 /* SearchViewController.swift in Sources */,
 				801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */,
