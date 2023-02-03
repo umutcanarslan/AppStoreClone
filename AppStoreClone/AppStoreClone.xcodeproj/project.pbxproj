@@ -15,6 +15,7 @@
 		801A31A5298DAC0200D9FDC6 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31A4298DAC0200D9FDC6 /* TodayViewController.swift */; };
 		801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31A6298DAC0A00D9FDC6 /* AppsViewController.swift */; };
 		801A31A9298DAC1100D9FDC6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31A8298DAC1100D9FDC6 /* SearchViewController.swift */; };
+		801A31AB298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		801A31A4298DAC0200D9FDC6 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		801A31A6298DAC0A00D9FDC6 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		801A31A8298DAC1100D9FDC6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		801A319A298DA9FD00D9FDC6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */,
 				801A31A5298DAC0200D9FDC6 /* TodayViewController.swift in Sources */,
 				801A3185298DA35300D9FDC6 /* AppDelegate.swift in Sources */,
+				801A31AB298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift in Sources */,
 				801A31A0298DAB6100D9FDC6 /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

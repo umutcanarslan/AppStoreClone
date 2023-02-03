@@ -20,7 +20,7 @@ class BaseTabBarController: UITabBarController {
     private func createViewControllers() -> [UIViewController] {
         let todayViewController = TodayViewController()
         let todayNavigationController = UINavigationController(rootViewController: todayViewController)
-        todayViewController.tabBarItem = .init(title: "Today", image: .init(systemName: ImageManager.todayIcon), tag: 0)
+        todayViewController.tabBarItem = .init(title: "Today", image: .init(systemName: ImageManager.todayIcon), tag: 2)
         todayNavigationController.navigationBar.prefersLargeTitles = true
 
         let appsViewController = AppsViewController()
@@ -30,13 +30,13 @@ class BaseTabBarController: UITabBarController {
 
         let searchViewController = SearchViewController()
         let searchNavigationController = UINavigationController(rootViewController: searchViewController)
-        searchViewController.tabBarItem = .init(title: "Search", image: .init(systemName: ImageManager.searchIcon), tag: 2)
+        searchViewController.tabBarItem = .init(title: "Search", image: .init(systemName: ImageManager.searchIcon), tag: 0)
         searchNavigationController.navigationBar.prefersLargeTitles = true
 
         return [
+            searchNavigationController,
             todayNavigationController,
-            appsNavigationController,
-            searchNavigationController
+            appsNavigationController
         ]
     }
 
