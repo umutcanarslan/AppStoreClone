@@ -24,7 +24,6 @@ class SearchResultCollectionCell: UICollectionViewCell {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Instagram"
-        label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
 
@@ -106,6 +105,14 @@ class SearchResultCollectionCell: UICollectionViewCell {
         imageView.backgroundColor = .black
         imageView.layer.cornerRadius = 12
         return imageView
+    }
+
+    func configure(with model: SearchResult) {
+        let rating = String(format: "%.2f", model.averageUserRating ?? 0.0)
+
+        nameLabel.text = model.trackName
+        categoryLabel.text = model.primaryGenreName
+        ratingsLabel.text = "Ratings: \(rating)"
     }
 
 }

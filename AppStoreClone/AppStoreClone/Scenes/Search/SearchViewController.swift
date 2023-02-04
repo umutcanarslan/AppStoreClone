@@ -9,6 +9,8 @@ import UIKit
 
 final class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    let viewModel = SearchViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Search"
@@ -18,6 +20,8 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
             SearchResultCollectionCell.self,
             forCellWithReuseIdentifier: SearchResultCollectionCell.reuseIdentifier
         )
+
+        setupViewModel()
     }
 
     init() {
@@ -28,23 +32,42 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func setupViewModel() {
+        viewModel.onChange = viewObserver
+        viewModel.fetchSearchResult()
+    }
+
+    private func viewObserver(state: SearchViewModelState) {
+        switch state {
+        case .idle:
+            break
+        case .loading:
+            break
+        case .success:
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        case .failure:
+            break
+        }
+    }
+
 }
 
 //MARK: Collection View Data Source
 extension SearchViewController {
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SearchResultCollectionCell.reuseIdentifier,
             for: indexPath
-        )
+        ) as! SearchResultCollectionCell
+        cell.configure(with: viewModel.getResultItem(at: indexPath.item))
         return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.numberOfItems
     }
-
 }
 
 //MARK: Collection View Delegate
