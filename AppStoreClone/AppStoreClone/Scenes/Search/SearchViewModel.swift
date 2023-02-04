@@ -20,6 +20,11 @@ final class SearchViewModel {
 
     var appResult: [SearchResult] = []
     var onChange: OnChange?
+    var keyword: String? {
+        didSet {
+            fetchSearchResult()
+        }
+    }
 
     var numberOfItems: Int {
         appResult.count
@@ -37,10 +42,15 @@ final class SearchViewModel {
         return appResult[index]
     }
 
-    func fetchSearchResult() {
+    fileprivate func fetchSearchResult() {
+        if keyword.isNilOrEmpty {
+            removeResults()
+            return
+        }
+
         emit(state: .loading(true))
 
-        NetworkManager.shared.fetchApps { [weak self] result in
+        NetworkManager.shared.fetchApps(with: keyword ?? "") { [weak self] result in
             guard let self = self else { return }
             self.emit(state: .loading(false))
 
@@ -52,6 +62,11 @@ final class SearchViewModel {
                 self.emit(state: .failure(error))
             }
         }
+    }
+
+    private func removeResults() {
+        appResult = []
+        self.emit(state: .success)
     }
 
 }

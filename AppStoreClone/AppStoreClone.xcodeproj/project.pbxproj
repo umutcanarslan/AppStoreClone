@@ -23,6 +23,10 @@
 		805A8ECB298DDB5800F7DFB5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ECA298DDB5800F7DFB5 /* SearchViewModel.swift */; };
 		805A8ECE298DE8A000F7DFB5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 805A8ECD298DE8A000F7DFB5 /* Kingfisher */; };
 		805A8ED0298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ECF298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift */; };
+		805A8ED3298DF59A00F7DFB5 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 805A8ED2298DF59A00F7DFB5 /* JGProgressHUD */; };
+		805A8ED6298DF5CE00F7DFB5 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ED5298DF5CE00F7DFB5 /* Hud.swift */; };
+		805A8ED8298DF61B00F7DFB5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ED7298DF61B00F7DFB5 /* UIApplication+Extension.swift */; };
+		805A8EDA298DF7E900F7DFB5 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,9 @@
 		801A31B8298DD5B600D9FDC6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		805A8ECA298DDB5800F7DFB5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		805A8ECF298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		805A8ED5298DF5CE00F7DFB5 /* Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
+		805A8ED7298DF61B00F7DFB5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805A8ED3298DF59A00F7DFB5 /* JGProgressHUD in Frameworks */,
 				805A8ECE298DE8A000F7DFB5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +88,7 @@
 				801A319A298DA9FD00D9FDC6 /* Components */,
 				801A31B3298DD50E00D9FDC6 /* Core */,
 				801A31AC298DBD2C00D9FDC6 /* Extensions */,
+				805A8ED4298DF5B100F7DFB5 /* Helpers */,
 				801A319E298DAB1C00D9FDC6 /* Managers */,
 				801A319D298DAA2F00D9FDC6 /* Resources */,
 				801A319C298DAA2A00D9FDC6 /* Scenes */,
@@ -162,8 +171,10 @@
 		801A31AC298DBD2C00D9FDC6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				801A31AD298DBD4800D9FDC6 /* UIView+Layout.swift */,
+				805A8ED7298DF61B00F7DFB5 /* UIApplication+Extension.swift */,
 				805A8ECF298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift */,
+				801A31AD298DBD4800D9FDC6 /* UIView+Layout.swift */,
+				805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,6 +219,14 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		805A8ED4298DF5B100F7DFB5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				805A8ED5298DF5CE00F7DFB5 /* Hud.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +245,7 @@
 			name = AppStoreClone;
 			packageProductDependencies = (
 				805A8ECD298DE8A000F7DFB5 /* Kingfisher */,
+				805A8ED2298DF59A00F7DFB5 /* JGProgressHUD */,
 			);
 			productName = AppStoreClone;
 			productReference = 801A3181298DA35300D9FDC6 /* AppStoreClone.app */;
@@ -257,6 +277,7 @@
 			mainGroup = 801A3178298DA35300D9FDC6;
 			packageReferences = (
 				805A8ECC298DE8A000F7DFB5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				805A8ED1298DF59A00F7DFB5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 801A3182298DA35300D9FDC6 /* Products */;
 			projectDirPath = "";
@@ -287,7 +308,9 @@
 				801A31AF298DBD4800D9FDC6 /* UIView+Layout.swift in Sources */,
 				801A31B0298DBD4800D9FDC6 /* VerticalStackView.swift in Sources */,
 				801A31B7298DD53A00D9FDC6 /* SearchResult.swift in Sources */,
+				805A8ED6298DF5CE00F7DFB5 /* Hud.swift in Sources */,
 				801A3199298DA56C00D9FDC6 /* BaseTabBarController.swift in Sources */,
+				805A8EDA298DF7E900F7DFB5 /* Optional+Extensions.swift in Sources */,
 				801A31B9298DD5B600D9FDC6 /* NetworkManager.swift in Sources */,
 				801A31A9298DAC1100D9FDC6 /* SearchViewController.swift in Sources */,
 				805A8ECB298DDB5800F7DFB5 /* SearchViewModel.swift in Sources */,
@@ -296,6 +319,7 @@
 				805A8ED0298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift in Sources */,
 				801A3185298DA35300D9FDC6 /* AppDelegate.swift in Sources */,
 				801A31AB298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift in Sources */,
+				805A8ED8298DF61B00F7DFB5 /* UIApplication+Extension.swift in Sources */,
 				801A31A0298DAB6100D9FDC6 /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +546,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		805A8ED1298DF59A00F7DFB5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -529,6 +561,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 805A8ECC298DE8A000F7DFB5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		805A8ED2298DF59A00F7DFB5 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 805A8ED1298DF59A00F7DFB5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

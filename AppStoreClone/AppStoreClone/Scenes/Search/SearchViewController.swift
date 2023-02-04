@@ -10,10 +10,14 @@ import UIKit
 final class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let viewModel = SearchViewModel()
+    fileprivate var timer = Timer()
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Search"
+
+        setupSearchBar()
 
         collectionView.backgroundColor = .white
         collectionView.register(
@@ -32,17 +36,28 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
         fatalError("init(coder:) has not been implemented")
     }
 
+    fileprivate func setupSearchBar() {
+        definesPresentationContext = true
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+    }
+
     private func setupViewModel() {
         viewModel.onChange = viewObserver
-        viewModel.fetchSearchResult()
+        viewModel.keyword = ""
+        
     }
 
     private func viewObserver(state: SearchViewModelState) {
         switch state {
         case .idle:
             break
-        case .loading:
-            break
+        case .loading(let loading):
+            DispatchQueue.main.async {
+                loading ? Hud.show() : Hud.dismiss()
+            }
         case .success:
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -78,5 +93,19 @@ extension SearchViewController {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         return .init(width: view.frame.width, height: 344)
+    }
+}
+
+//MARK: - Search Bar Delegate
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { _ in
+            self.viewModel.keyword = searchText
+        })
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.viewModel.keyword = ""
     }
 }

@@ -53,9 +53,9 @@ class SearchResultCollectionCell: UICollectionViewCell {
         return button
     }()
 
-    lazy var screenShot1ImageView = self.createScreenShotImageView()
-    lazy var screenShot2ImageView = self.createScreenShotImageView()
-    lazy var screenShot3ImageView = self.createScreenShotImageView()
+    lazy var screenshot1ImageView = self.createScreenShotImageView()
+    lazy var screenshot2ImageView = self.createScreenShotImageView()
+    lazy var screenshot3ImageView = self.createScreenShotImageView()
 
     //MARK: - Life Cycle
     override init(frame: CGRect) {
@@ -97,7 +97,7 @@ class SearchResultCollectionCell: UICollectionViewCell {
 
     private func autoLayoutImagesStackView() -> UIStackView {
         let stackView = UIStackView(
-            arrangedSubviews: [screenShot1ImageView, screenShot2ImageView, screenShot3ImageView]
+            arrangedSubviews: [screenshot1ImageView, screenshot2ImageView, screenshot3ImageView]
         )
         stackView.spacing = 12
         stackView.distribution = .fillEqually
@@ -113,15 +113,30 @@ class SearchResultCollectionCell: UICollectionViewCell {
     }
 
     func configure(with model: SearchResult) {
-        let rating = String(format: "%.2f", model.averageUserRating ?? 0.0)
+        let rating = String(format: "%.1f", model.averageUserRating ?? 0.0)
 
         imageView.downloadedFrom(url: model.artworkUrl100)
         nameLabel.text = model.trackName
         categoryLabel.text = model.primaryGenreName
         ratingsLabel.text = "Ratings: \(rating)"
-        screenShot1ImageView.downloadedFrom(url: model.screenshotUrls[0])
-        screenShot2ImageView.downloadedFrom(url: model.screenshotUrls[1])
-        screenShot3ImageView.downloadedFrom(url: model.screenshotUrls[2])
+
+        if model.screenshotUrls.count > 0 {
+            if let screenshot1 = model.screenshotUrls[0] {
+                screenshot1ImageView.downloadedFrom(url: screenshot1)
+            }
+        }
+
+        if model.screenshotUrls.count > 1 {
+            if let screenshot2 = model.screenshotUrls[1] {
+                screenshot2ImageView.downloadedFrom(url: screenshot2)
+            }
+        }
+
+        if model.screenshotUrls.count > 2 {
+            if let screenshot3 = model.screenshotUrls[2] {
+                screenshot3ImageView.downloadedFrom(url: screenshot3)
+            }
+        }
     }
 
 }
