@@ -14,10 +14,10 @@ class SearchResultCollectionCell: UICollectionViewCell {
 
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
         imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.layer.cornerRadius = 12
+        imageView.layer.masksToBounds = true
         return imageView
     }()
 
@@ -47,7 +47,7 @@ class SearchResultCollectionCell: UICollectionViewCell {
         button.setTitle("GET", for: .normal)
         button.setTitleColor(.link, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .heavy)
-        button.backgroundColor = .init(white: 0.96, alpha: 1)
+        button.backgroundColor = .init(white: 0.95, alpha: 1)
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         button.layer.cornerRadius = 16
         return button
@@ -69,16 +69,19 @@ class SearchResultCollectionCell: UICollectionViewCell {
 
     //MARK: - UI Helpers
     private func autoLayoutFullStackView() {
-        let stackView = VerticalStackView(arrangedSubviews: [autoLayoutTopStackView(), autoLayoutImagesStackView()], spacing: 12)
+        let stackView = VerticalStackView(
+            arrangedSubviews: [autoLayoutTopStackView(), autoLayoutImagesStackView()],
+            spacing: 12
+        )
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
-        stackView.fillSuperview(padding: .init(top: 8, left: 16, bottom: 8, right: 16))
+        stackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
     }
 
     private func autoLayoutTopStackView() -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: [imageView, labelStackView(), getButton])
-        stackView.spacing = 12
+        stackView.spacing = 16
         stackView.alignment = .center
 
         return stackView
@@ -93,7 +96,9 @@ class SearchResultCollectionCell: UICollectionViewCell {
     }
 
     private func autoLayoutImagesStackView() -> UIStackView {
-        let stackView = UIStackView(arrangedSubviews: [screenShot1ImageView, screenShot2ImageView, screenShot3ImageView])
+        let stackView = UIStackView(
+            arrangedSubviews: [screenShot1ImageView, screenShot2ImageView, screenShot3ImageView]
+        )
         stackView.spacing = 12
         stackView.distribution = .fillEqually
 
@@ -102,17 +107,21 @@ class SearchResultCollectionCell: UICollectionViewCell {
 
     private func createScreenShotImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.backgroundColor = .black
         imageView.layer.cornerRadius = 12
+        imageView.layer.masksToBounds = true
         return imageView
     }
 
     func configure(with model: SearchResult) {
         let rating = String(format: "%.2f", model.averageUserRating ?? 0.0)
 
+        imageView.downloadedFrom(url: model.artworkUrl100)
         nameLabel.text = model.trackName
         categoryLabel.text = model.primaryGenreName
         ratingsLabel.text = "Ratings: \(rating)"
+        screenShot1ImageView.downloadedFrom(url: model.screenshotUrls[0])
+        screenShot2ImageView.downloadedFrom(url: model.screenshotUrls[1])
+        screenShot3ImageView.downloadedFrom(url: model.screenshotUrls[2])
     }
 
 }
