@@ -14,6 +14,7 @@
 		8003CD7B29A0164800682D38 /* AppsRowCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003CD7A29A0164800682D38 /* AppsRowCollectionCell.swift */; };
 		8003CD7E29A017E100682D38 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003CD7D29A017E100682D38 /* UIButton+Extensions.swift */; };
 		8003CD8029A01B9200682D38 /* AppsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003CD7F29A01B9200682D38 /* AppsHeaderCollectionReusableView.swift */; };
+		8003CD8229A01F1900682D38 /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003CD8129A01F1900682D38 /* HorizontalSnappingController.swift */; };
 		801A3185298DA35300D9FDC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A3184298DA35300D9FDC6 /* AppDelegate.swift */; };
 		801A318E298DA35400D9FDC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801A318D298DA35400D9FDC6 /* Assets.xcassets */; };
 		801A3191298DA35400D9FDC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801A318F298DA35400D9FDC6 /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		8003CD7A29A0164800682D38 /* AppsRowCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsRowCollectionCell.swift; sourceTree = "<group>"; };
 		8003CD7D29A017E100682D38 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		8003CD7F29A01B9200682D38 /* AppsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		8003CD8129A01F1900682D38 /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		801A3181298DA35300D9FDC6 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		801A3184298DA35300D9FDC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		801A318D298DA35400D9FDC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				805A8EDD298E870600F7DFB5 /* BaseCollectionViewController.swift */,
 				801A3198298DA56C00D9FDC6 /* BaseTabBarController.swift */,
+				8003CD8129A01F1900682D38 /* HorizontalSnappingController.swift */,
 				801A31A2298DABDD00D9FDC6 /* Apps */,
 				801A31A3298DABE100D9FDC6 /* Search */,
 				801A31A1298DABD000D9FDC6 /* Today */,
@@ -359,6 +362,7 @@
 				805A8ECB298DDB5800F7DFB5 /* SearchViewModel.swift in Sources */,
 				8003CD7329A013A200682D38 /* AppGroup.swift in Sources */,
 				8064E4FB298E8BE600DF05C5 /* AppsHorizontalViewController.swift in Sources */,
+				8003CD8229A01F1900682D38 /* HorizontalSnappingController.swift in Sources */,
 				805A8EE2298E888C00F7DFB5 /* AppsGroupCollectionCell.swift in Sources */,
 				801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */,
 				801A31A5298DAC0200D9FDC6 /* TodayViewController.swift in Sources */,
