@@ -27,6 +27,11 @@
 		805A8ED6298DF5CE00F7DFB5 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ED5298DF5CE00F7DFB5 /* Hud.swift */; };
 		805A8ED8298DF61B00F7DFB5 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ED7298DF61B00F7DFB5 /* UIApplication+Extension.swift */; };
 		805A8EDA298DF7E900F7DFB5 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */; };
+		805A8EDC298E853E00F7DFB5 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8EDB298E853E00F7DFB5 /* AppsViewModel.swift */; };
+		805A8EDE298E870600F7DFB5 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8EDD298E870600F7DFB5 /* BaseCollectionViewController.swift */; };
+		805A8EE2298E888C00F7DFB5 /* AppsGroupCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8EE1298E888C00F7DFB5 /* AppsGroupCollectionCell.swift */; };
+		805A8EE4298E8A3100F7DFB5 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A8EE3298E8A3100F7DFB5 /* UILabel+Extensions.swift */; };
+		8064E4FB298E8BE600DF05C5 /* AppsHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8064E4FA298E8BE600DF05C5 /* AppsHorizontalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		805A8ED5298DF5CE00F7DFB5 /* Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
 		805A8ED7298DF61B00F7DFB5 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		805A8EDB298E853E00F7DFB5 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
+		805A8EDD298E870600F7DFB5 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		805A8EE1298E888C00F7DFB5 /* AppsGroupCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCollectionCell.swift; sourceTree = "<group>"; };
+		805A8EE3298E8A3100F7DFB5 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		8064E4FA298E8BE600DF05C5 /* AppsHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +126,7 @@
 		801A319C298DAA2A00D9FDC6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				805A8EDD298E870600F7DFB5 /* BaseCollectionViewController.swift */,
 				801A3198298DA56C00D9FDC6 /* BaseTabBarController.swift */,
 				801A31A2298DABDD00D9FDC6 /* Apps */,
 				801A31A3298DABE100D9FDC6 /* Search */,
@@ -154,7 +165,9 @@
 		801A31A2298DABDD00D9FDC6 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				8064E4FA298E8BE600DF05C5 /* AppsHorizontalViewController.swift */,
 				801A31A6298DAC0A00D9FDC6 /* AppsViewController.swift */,
+				805A8EDB298E853E00F7DFB5 /* AppsViewModel.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -171,10 +184,11 @@
 		801A31AC298DBD2C00D9FDC6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */,
 				805A8ED7298DF61B00F7DFB5 /* UIApplication+Extension.swift */,
 				805A8ECF298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift */,
+				805A8EE3298E8A3100F7DFB5 /* UILabel+Extensions.swift */,
 				801A31AD298DBD4800D9FDC6 /* UIView+Layout.swift */,
-				805A8ED9298DF7E900F7DFB5 /* Optional+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				801A31AA298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift */,
+				805A8EE1298E888C00F7DFB5 /* AppsGroupCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -311,13 +326,18 @@
 				805A8ED6298DF5CE00F7DFB5 /* Hud.swift in Sources */,
 				801A3199298DA56C00D9FDC6 /* BaseTabBarController.swift in Sources */,
 				805A8EDA298DF7E900F7DFB5 /* Optional+Extensions.swift in Sources */,
+				805A8EDC298E853E00F7DFB5 /* AppsViewModel.swift in Sources */,
 				801A31B9298DD5B600D9FDC6 /* NetworkManager.swift in Sources */,
 				801A31A9298DAC1100D9FDC6 /* SearchViewController.swift in Sources */,
+				805A8EDE298E870600F7DFB5 /* BaseCollectionViewController.swift in Sources */,
 				805A8ECB298DDB5800F7DFB5 /* SearchViewModel.swift in Sources */,
+				8064E4FB298E8BE600DF05C5 /* AppsHorizontalViewController.swift in Sources */,
+				805A8EE2298E888C00F7DFB5 /* AppsGroupCollectionCell.swift in Sources */,
 				801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */,
 				801A31A5298DAC0200D9FDC6 /* TodayViewController.swift in Sources */,
 				805A8ED0298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift in Sources */,
 				801A3185298DA35300D9FDC6 /* AppDelegate.swift in Sources */,
+				805A8EE4298E8A3100F7DFB5 /* UILabel+Extensions.swift in Sources */,
 				801A31AB298DB4EB00D9FDC6 /* SearchResultCollectionCell.swift in Sources */,
 				805A8ED8298DF61B00F7DFB5 /* UIApplication+Extension.swift in Sources */,
 				801A31A0298DAB6100D9FDC6 /* ImageManager.swift in Sources */,

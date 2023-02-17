@@ -34,9 +34,9 @@ class BaseTabBarController: UITabBarController {
         searchNavigationController.navigationBar.prefersLargeTitles = true
 
         return [
-            searchNavigationController,
+            appsNavigationController,
             todayNavigationController,
-            appsNavigationController
+            searchNavigationController
         ]
     }
 

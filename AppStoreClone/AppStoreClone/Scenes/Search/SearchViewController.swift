@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+final class SearchViewController: BaseCollectionViewController {
 
     let viewModel = SearchViewModel()
     fileprivate var timer = Timer()
@@ -26,14 +26,6 @@ final class SearchViewController: UICollectionViewController, UICollectionViewDe
         )
 
         setupViewModel()
-    }
-
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     fileprivate func setupSearchBar() {
@@ -85,8 +77,8 @@ extension SearchViewController {
     }
 }
 
-//MARK: Collection View Delegate
-extension SearchViewController {
+//MARK: Collection View Delegate Flow Layout
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,

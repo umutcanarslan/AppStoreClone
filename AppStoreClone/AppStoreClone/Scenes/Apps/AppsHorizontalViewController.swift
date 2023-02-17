@@ -1,42 +1,41 @@
 //
-//  AppsViewController.swift
+//  AppsHorizontalViewController.swift
 //  AppStoreClone
 //
-//  Created by Umut Can Arslan on 3.02.2023.
+//  Created by Umut Can Arslan on 4.02.2023.
 //
 
 import UIKit
 
-final class AppsViewController: BaseCollectionViewController {
+class AppsHorizontalViewController: BaseCollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        collectionView.register(AppsGroupCollectionCell.self, forCellWithReuseIdentifier: AppsGroupCollectionCell.reuseIdentifier)
-        navigationItem.title = "Apps"
+        collectionView.backgroundColor = .black
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
 
 }
 
 //MARK: - Collection View Data Source
-extension AppsViewController {
+extension AppsHorizontalViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: AppsGroupCollectionCell.reuseIdentifier,
+            withReuseIdentifier: "cell",
             for: indexPath
         )
+        cell.backgroundColor = .red
         return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
 }
 
 //MARK: - Collection View Delegate Flow Layout
-extension AppsViewController: UICollectionViewDelegateFlowLayout {
+extension AppsHorizontalViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 350)
+        return .init(width: view.frame.width - 32, height: 96)
     }
 }
-

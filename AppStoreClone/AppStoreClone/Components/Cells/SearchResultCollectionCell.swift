@@ -23,20 +23,17 @@ class SearchResultCollectionCell: UICollectionViewCell {
 
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Instagram"
         return label
     }()
 
     let categoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Photos & Videos"
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
     }()
 
     let ratingsLabel: UILabel = {
         let label = UILabel()
-        label.text = "9.26M"
         label.textColor = .lightGray
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label
