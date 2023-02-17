@@ -50,7 +50,7 @@ final class SearchViewModel {
 
         emit(state: .loading(true))
 
-        NetworkManager.shared.fetchApps(with: keyword ?? "") { [weak self] result in
+        NetworkManager.shared.fetchSearchResults(with: keyword ?? "") { [weak self] result in
             guard let self = self else { return }
             self.emit(state: .loading(false))
 

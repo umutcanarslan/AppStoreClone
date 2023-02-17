@@ -9,6 +9,13 @@ import UIKit
 
 class BaseCollectionViewController: UICollectionViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+    }
+
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
