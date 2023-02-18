@@ -14,13 +14,19 @@ enum AppDetailViewModelState {
     case failure(NetworkError)
 }
 
+enum AppDetailCellType {
+    case information(model: SearchResult)
+    case preview(model: [URL])
+//    case review
+}
+
 final class AppDetailViewModel {
 
     typealias OnChange = (AppDetailViewModelState) -> Void
 
     var onChange: OnChange?
     let model: FeedResult
-    var results: [SearchResult] = [] {
+    var cells: [AppDetailCellType] = [] {
         didSet {
             emit(state: .success)
         }
@@ -42,11 +48,19 @@ final class AppDetailViewModel {
 
             switch result {
             case .success(let response):
-                self.results = response.results
+                if let model = response.results.first {
+                    self.cells.append(.information(model: model))
+                    self.cells.append(.preview(model: self.appScreenshots(model: model)))
+                }
+
             case .failure(let error):
                 self.emit(state: .failure(error))
             }
         }
+    }
+
+    private func appScreenshots(model: SearchResult) -> [URL] {
+        return model.screenshotUrls.compactMap({ return $0 })
     }
 
 }

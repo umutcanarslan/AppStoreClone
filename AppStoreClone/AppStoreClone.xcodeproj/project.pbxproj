@@ -42,8 +42,11 @@
 		8064E4FB298E8BE600DF05C5 /* AppsHorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8064E4FA298E8BE600DF05C5 /* AppsHorizontalViewController.swift */; };
 		80B6CD0A29A156C7009908CE /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD0929A156C7009908CE /* AppDetailViewController.swift */; };
 		80B6CD0D29A15E8D009908CE /* AppDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD0C29A15E8D009908CE /* AppDetailViewModel.swift */; };
-		80B6CD1129A1604F009908CE /* AppDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD1029A1604F009908CE /* AppDetailCollectionCell.swift */; };
+		80B6CD1129A1604F009908CE /* AppDetailInformationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD1029A1604F009908CE /* AppDetailInformationCollectionCell.swift */; };
 		80B6CD1329A16505009908CE /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD1229A16505009908CE /* HorizontalStackView.swift */; };
+		80B6CD1529A17542009908CE /* AppDetailPreviewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD1429A17542009908CE /* AppDetailPreviewCollectionCell.swift */; };
+		80B6CD1729A17602009908CE /* AppDetailPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD1629A17602009908CE /* AppDetailPreviewController.swift */; };
+		80B6CD1929A1775F009908CE /* ScreenshotCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6CD1829A1775F009908CE /* ScreenshotCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +85,11 @@
 		8064E4FA298E8BE600DF05C5 /* AppsHorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHorizontalViewController.swift; sourceTree = "<group>"; };
 		80B6CD0929A156C7009908CE /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		80B6CD0C29A15E8D009908CE /* AppDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewModel.swift; sourceTree = "<group>"; };
-		80B6CD1029A1604F009908CE /* AppDetailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCollectionCell.swift; sourceTree = "<group>"; };
+		80B6CD1029A1604F009908CE /* AppDetailInformationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailInformationCollectionCell.swift; sourceTree = "<group>"; };
 		80B6CD1229A16505009908CE /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		80B6CD1429A17542009908CE /* AppDetailPreviewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailPreviewCollectionCell.swift; sourceTree = "<group>"; };
+		80B6CD1629A17602009908CE /* AppDetailPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailPreviewController.swift; sourceTree = "<group>"; };
+		80B6CD1829A1775F009908CE /* ScreenshotCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +280,7 @@
 			children = (
 				80B6CD0929A156C7009908CE /* AppDetailViewController.swift */,
 				80B6CD0C29A15E8D009908CE /* AppDetailViewModel.swift */,
+				80B6CD1629A17602009908CE /* AppDetailPreviewController.swift */,
 			);
 			path = AppDetail;
 			sourceTree = "<group>";
@@ -289,9 +296,27 @@
 		80B6CD0F29A16038009908CE /* AppDetail */ = {
 			isa = PBXGroup;
 			children = (
-				80B6CD1029A1604F009908CE /* AppDetailCollectionCell.swift */,
+				80B6CD1A29A18497009908CE /* Information */,
+				80B6CD1B29A184A1009908CE /* Preview */,
 			);
 			path = AppDetail;
+			sourceTree = "<group>";
+		};
+		80B6CD1A29A18497009908CE /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				80B6CD1429A17542009908CE /* AppDetailPreviewCollectionCell.swift */,
+				80B6CD1829A1775F009908CE /* ScreenshotCollectionCell.swift */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		80B6CD1B29A184A1009908CE /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				80B6CD1029A1604F009908CE /* AppDetailInformationCollectionCell.swift */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,12 +398,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8003CD7529A0141B00682D38 /* SocialApp.swift in Sources */,
+				80B6CD1529A17542009908CE /* AppDetailPreviewCollectionCell.swift in Sources */,
 				801A31AF298DBD4800D9FDC6 /* UIView+Layout.swift in Sources */,
 				801A31B0298DBD4800D9FDC6 /* VerticalStackView.swift in Sources */,
 				801A31B7298DD53A00D9FDC6 /* SearchResult.swift in Sources */,
 				8003CD8029A01B9200682D38 /* AppsHeaderCollectionReusableView.swift in Sources */,
 				805A8ED6298DF5CE00F7DFB5 /* Hud.swift in Sources */,
 				801A3199298DA56C00D9FDC6 /* BaseTabBarController.swift in Sources */,
+				80B6CD1729A17602009908CE /* AppDetailPreviewController.swift in Sources */,
 				805A8EDA298DF7E900F7DFB5 /* Optional+Extensions.swift in Sources */,
 				805A8EDC298E853E00F7DFB5 /* AppsViewModel.swift in Sources */,
 				80B6CD1329A16505009908CE /* HorizontalStackView.swift in Sources */,
@@ -397,8 +424,9 @@
 				801A31A7298DAC0A00D9FDC6 /* AppsViewController.swift in Sources */,
 				801A31A5298DAC0200D9FDC6 /* TodayViewController.swift in Sources */,
 				805A8ED0298DE8CC00F7DFB5 /* UIImageView+Kingfisher.swift in Sources */,
-				80B6CD1129A1604F009908CE /* AppDetailCollectionCell.swift in Sources */,
+				80B6CD1129A1604F009908CE /* AppDetailInformationCollectionCell.swift in Sources */,
 				801A3185298DA35300D9FDC6 /* AppDelegate.swift in Sources */,
+				80B6CD1929A1775F009908CE /* ScreenshotCollectionCell.swift in Sources */,
 				805A8EE4298E8A3100F7DFB5 /* UILabel+Extensions.swift in Sources */,
 				8003CD7929A015B500682D38 /* AppsHeaderHorizontalViewController.swift in Sources */,
 				80B6CD0D29A15E8D009908CE /* AppDetailViewModel.swift in Sources */,

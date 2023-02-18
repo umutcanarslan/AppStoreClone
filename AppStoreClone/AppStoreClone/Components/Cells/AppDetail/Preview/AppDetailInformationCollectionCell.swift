@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppDetailCollectionCell: UICollectionViewCell {
+class AppDetailInformationCollectionCell: UICollectionViewCell {
 
     static let reuseIdentifier = "AppDetailCollectionCell"
 
@@ -21,7 +21,7 @@ class AppDetailCollectionCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .lightGray
+
         setupUI()
         autoLayoutFullStackView()
     }
