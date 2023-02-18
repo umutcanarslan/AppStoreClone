@@ -7,13 +7,16 @@
 
 import UIKit
 
+typealias DidSelectItem = (FeedResult) -> ()
+
 enum Spacing {
     static let topBottomPadding: CGFloat = 16
     static let minimumLineSpacing: CGFloat = 12
 }
 
 class AppsHorizontalViewController: HorizontalSnappingController {
-    
+
+
     private var results: [FeedResult] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -21,7 +24,9 @@ class AppsHorizontalViewController: HorizontalSnappingController {
             }
         }
     }
-    
+
+    var didSelectHandler: DidSelectItem?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +61,14 @@ extension AppsHorizontalViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results.count
+    }
+}
+
+//MARK: - CollectionView Delegate
+extension AppsHorizontalViewController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let app = results[indexPath.item]
+        didSelectHandler?(app)
     }
 }
 

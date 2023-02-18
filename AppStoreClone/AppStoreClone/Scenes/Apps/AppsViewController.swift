@@ -68,8 +68,18 @@ extension AppsViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCollectionCell.reuseIdentifier, for: indexPath) as? AppsGroupCollectionCell else { return .init() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: AppsGroupCollectionCell.reuseIdentifier,
+            for: indexPath
+        ) as? AppsGroupCollectionCell else { return .init() }
         cell.configure(with: viewModel.model[indexPath.row])
+        cell.appsHorizontalController.collectionView.reloadData()
+        cell.appsHorizontalController.didSelectHandler = { [weak self] model in
+            let appDetailController = AppDetailViewController(model: model)
+
+            self?.navigationController?.pushViewController(appDetailController, animated: true)
+        }
+
         return cell
     }
 
@@ -78,17 +88,37 @@ extension AppsViewController {
     }
 }
 
+//MARK: - CollectionView Delegate
+extension AppsViewController {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
+}
+
+
 //MARK: - Collection View Delegate Flow Layout
 extension AppsViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int
+    ) -> CGSize {
         return .init(width: view.frame.width, height: 300)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         return .init(width: view.frame.width, height: 300)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
         return .init(top: 16, left: 0, bottom: 0, right: 0)
     }
 }

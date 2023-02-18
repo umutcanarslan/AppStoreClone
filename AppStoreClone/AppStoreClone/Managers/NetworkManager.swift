@@ -50,6 +50,11 @@ struct NetworkManager {
         fetchRequest(urlString: urlString, completion: completion)
     }
 
+    func fetchAppDetail(appID: String, completion: @escaping (Result<SearchResultResponse, NetworkError>) -> Void) {
+        let urlString = "https://itunes.apple.com/lookup?id=\(appID)"
+        fetchRequest(urlString: urlString, completion: completion)
+    }
+
     func fetchRequest<T: Decodable>(urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
 
         guard let url = URL(string: urlString) else {
