@@ -21,4 +21,5 @@ struct SearchResult: Decodable {
     let formattedPrice: String
     let description: String
     let releaseNotes: String
+    let version: String
 }

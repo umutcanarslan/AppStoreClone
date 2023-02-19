@@ -52,7 +52,7 @@ class AppDetailInformationCollectionCell: UICollectionViewCell {
         stackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
     }
 
-    private func autoLayoutHeaderStackView()  -> UIStackView {
+    private func autoLayoutHeaderStackView() -> UIStackView {
         let stackView = HorizontalStackView(
             arrangedSubviews: [icon, autoLayoutHeaderLabelStackView()],
             spacing: 12
@@ -77,7 +77,7 @@ class AppDetailInformationCollectionCell: UICollectionViewCell {
         descriptionLabel.text = model.description
         priceButton.setTitle(model.formattedPrice, for: .normal)
         whatsNewLabel.text = "What's New"
-        versionLabel.text = "1.09"
+        versionLabel.text = model.version
         releaseNotesLabel.text = model.releaseNotes
     }
 

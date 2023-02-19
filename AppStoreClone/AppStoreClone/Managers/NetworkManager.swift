@@ -55,6 +55,11 @@ struct NetworkManager {
         fetchRequest(urlString: urlString, completion: completion)
     }
 
+    func fetchAppReview(appID: String, completion: @escaping (Result<Reviews, NetworkError>) -> Void) {
+            let urlString = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appID)/sortby=mostrecent/json"
+            fetchRequest(urlString: urlString, completion: completion)
+        }
+
     func fetchRequest<T: Decodable>(urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
 
         guard let url = URL(string: urlString) else {

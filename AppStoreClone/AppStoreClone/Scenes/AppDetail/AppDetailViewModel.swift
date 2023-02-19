@@ -17,7 +17,7 @@ enum AppDetailViewModelState {
 enum AppDetailCellType {
     case information(model: SearchResult)
     case preview(model: [URL])
-//    case review
+    case review(model: [Entry])
 }
 
 final class AppDetailViewModel {
@@ -42,10 +42,16 @@ final class AppDetailViewModel {
     }
 
     func fetchAppDetail() {
+        emit(state: .loading(true))
+
+        let dispatchGroup = DispatchGroup()
+
+        dispatchGroup.enter()
         guard let appID = model.id else { return }
+
         NetworkManager.shared.fetchAppDetail(appID: appID) { [weak self] result in
             guard let self else { return }
-
+            dispatchGroup.leave()
             switch result {
             case .success(let response):
                 if let model = response.results.first {
@@ -56,6 +62,24 @@ final class AppDetailViewModel {
             case .failure(let error):
                 self.emit(state: .failure(error))
             }
+        }
+
+        dispatchGroup.enter()
+
+        NetworkManager.shared.fetchAppReview(appID: appID) { [weak self]  result in
+            guard let self else { return }
+            dispatchGroup.leave()
+
+            switch result {
+            case .success(let response):
+                self.cells.append(.review(model: response.feed.entry))
+            case .failure(let error):
+                self.emit(state: .failure(error))
+            }
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            self.emit(state: .loading(false))
         }
     }
 

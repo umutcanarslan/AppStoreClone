@@ -22,10 +22,13 @@ class AppDetailViewController: BaseCollectionViewController {
             AppDetailInformationCollectionCell.self,
             forCellWithReuseIdentifier: AppDetailInformationCollectionCell.reuseIdentifier
         )
-
         collectionView.register(
             AppDetailPreviewCollectionCell.self,
             forCellWithReuseIdentifier: AppDetailPreviewCollectionCell.reuseIdentifier
+        )
+        collectionView.register(
+            AppDetailReviewCollectionCell.self,
+            forCellWithReuseIdentifier: AppDetailReviewCollectionCell.reuseIdentifier
         )
 
         setupViewModel()
@@ -87,6 +90,14 @@ extension AppDetailViewController {
 
             cell.configure(with: model)
             return cell
+        case .review(let model):
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: AppDetailReviewCollectionCell.reuseIdentifier,
+                for: indexPath
+            ) as? AppDetailReviewCollectionCell  else { return .init() }
+
+            cell.configure(with: model)
+            return cell
         }
     }
 }
@@ -116,6 +127,13 @@ extension AppDetailViewController: UICollectionViewDelegateFlowLayout {
             let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 1000))
 
             return .init(width: view.frame.width, height: estimatedSize.height)
+
+        case .review:
+            return .init(width: view.frame.width, height: 264)
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 0, left: 0, bottom: 16, right: 0)
     }
 }
