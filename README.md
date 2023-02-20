@@ -4,9 +4,9 @@
  
 
 ### Screenshots:
-<img src="./Images/apps.png" width="277" height="600">
-<img src="./Images/search.png" width="277" height="600">
-<img src="./Images/app-detail.png" width="277" height="600">
+<img src="./Images/apps.png" width="277" height="600">&nbsp;
+<img src="./Images/search.png" width="277" height="600">&nbsp;
+<img src="./Images/app-detail.png" width="277" height="600">&nbsp;
 <img src="./Images/app-review.png" width="277" height="600"><br>
 
 ### Used
